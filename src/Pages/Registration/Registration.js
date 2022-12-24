@@ -130,6 +130,7 @@ function Registration() {
   return (
     <div>
       <form onSubmit={handleSubmit} className="form my-4">
+        <span className="title">Customer!</span>
         <span className="title">Create Account</span>
         <div>
           {inputs.map((input) => (

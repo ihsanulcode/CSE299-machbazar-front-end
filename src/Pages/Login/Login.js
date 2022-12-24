@@ -70,6 +70,7 @@ function Login() {
 
   return (
     <div className="form login my-4">
+      <span className="title">Customer</span>
       <span className="title">Welcome Back!</span>
       <div className="log">
         <h5>Login to continue</h5>
