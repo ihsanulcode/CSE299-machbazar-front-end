@@ -1,0 +1,19 @@
+.wishCard-container {
+  margin-top: 20px;
+  margin-bottom: 78px;
+}
+
+/* fish cards design */
+.wish-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: space-around;
+  justify-items: center;
+}
+
+/* responsive for mobile and tablet */
+@media only screen and (max-width: 768px) {
+  .wish-cards {
+    grid-template-columns: 1fr;
+  }
+}
