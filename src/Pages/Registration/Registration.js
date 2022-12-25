@@ -19,11 +19,13 @@ function Registration() {
     uid: "",
     userState: "buyer",
     name: "",
+    address: "",
     phone: "",
     email: "",
   });
 
-  const { createUser, googleLogin, updateUserName, setSeller } = useContext(AuthContext);
+  const { createUser, googleLogin, updateUserName, setSeller } =
+    useContext(AuthContext);
   const googleProvider = new GoogleAuthProvider();
   const navigate = useNavigate();
 

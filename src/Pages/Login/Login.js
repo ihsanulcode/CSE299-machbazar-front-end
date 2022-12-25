@@ -22,7 +22,7 @@ function Login() {
     {
       id: 1,
       name: "email",
-      type: "email",
+      type: "text",
       placeholder: "Email",
       errorMessage: "Please enter a valid email address!",
       required: true,
@@ -82,8 +82,7 @@ function Login() {
             <FormInput
               key={input.id}
               {...input}
-              value={values[input.name]}
-              onChange={handleOnChange}
+              handleOnChange={handleOnChange}
             />
           ))}
         </div>

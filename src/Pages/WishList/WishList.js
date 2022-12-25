@@ -40,7 +40,7 @@ function WishList() {
       </Col>
       <Col lg={8} md={12}>
         <h3 className="text-center text-primary mt-3">
-          Wish List Items:{wishlist.length}
+          Your wish items: {wishlist.length}
         </h3>
         <div className="my-4 w-100">
           <WishCards

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
 import "./Categories.css";
 
 function Categories() {
@@ -15,13 +14,7 @@ function Categories() {
   return (
     <div>
       <div className="dropdown open categories">
-        <button
-          className="btn  categories-btn"
-          type="button"
-          aria-expanded="true"
-        >
-          Categories
-        </button>
+        <button className="btn  categories-btn" type="button" aria-expanded="true">Categories</button>
         <ul className="dropdown-menu show">
           {fishCategories.map((fish) => (
             <div key={fish.id}>

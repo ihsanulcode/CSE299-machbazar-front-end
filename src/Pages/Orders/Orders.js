@@ -49,13 +49,14 @@ function Orders() {
         .then((data) => setOrders(data));
     }
   }, []);
+
   useEffect(() => {
     setPendingOrders(orders.filter((order) => order.orderStatus === "pending"));
     setCompletedOrders(
       orders.filter((order) => order.orderStatus === "completed")
     );
-    console.log(pendingOrders);
   }, [orders, setOrders]);
+  
   return (
     <Row>
       <Col>
@@ -65,12 +66,15 @@ function Orders() {
         {/* ---------------------- completed orders list------------------- */}
         <div>
           <h4 className="my-4">
-            Your Order ID: 3422534{"   "}
-            <p className="text-primary d-inline ms-2"> items</p>
+            Delivered:
+            <p className="text-primary d-inline ms-2">
+              {completedOrders.length ? completedOrders.length : 0} items
+            </p>
           </h4>
           <h4>
             status: <p className="text-success d-inline">Completed</p>
           </h4>
+          <hr />
           <div>
             {completedOrders.map((order) => (
               <OrderCard
@@ -84,12 +88,15 @@ function Orders() {
         {/* ------------------------pending orders list---------------------- */}
         <div>
           <h4 className="my-4">
-            Your Order ID: 3422534{"   "}
-            <p className="text-primary d-inline ms-2"> items</p>
+            Pending:
+            <p className="text-primary d-inline ms-2">
+              {pendingOrders.length ? pendingOrders.length : 0} items
+            </p>
           </h4>
           <h4>
             status: <p className="text-danger d-inline">Pending</p>
           </h4>
+          <hr />
           <div>
             {pendingOrders.map((order) => (
               <OrderCard

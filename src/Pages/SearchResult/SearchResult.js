@@ -30,7 +30,10 @@ function SearchResult() {
   return (
     <div className="search-result">
       <Container>
-        {/* <h3 className="mt-3">{fishData[0].category}</h3> */}
+        <h3 className="mt-3">
+          {fishData.length === 0 && <p>No fishes found!!!</p>}
+        </h3>
+        <h3 className="mt-3">{fishData[0]?.category}</h3>
         <hr />
 
         <div className="my-4 fish-cards">

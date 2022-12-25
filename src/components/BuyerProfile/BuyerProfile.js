@@ -11,7 +11,7 @@ function BuyerProfile() {
   const [values, setValues] = useState({
     name: user.displayName,
     email: user.email,
-    phone: "",
+    phone: currentUser.phone,
     address: "",
   });
 
@@ -22,7 +22,7 @@ function BuyerProfile() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(user);
+    console.log(values);
 
     fetch(`http://localhost:5000/user/${currentUser._id}`, {
       method: "PUT",
@@ -43,7 +43,11 @@ function BuyerProfile() {
   useEffect(() => {
     fetch(`http://localhost:5000/user/${user.uid}`)
       .then((res) => res.json())
-      .then((data) => setCurrentUser(data));
+      .then((data) => {
+        setCurrentUser(data);
+        values.phone = currentUser.phone;
+        console.log(data);
+      });
   }, []);
 
   return (
@@ -60,7 +64,7 @@ function BuyerProfile() {
           <input
             type="text"
             placeholder="Enter your Name"
-            value={user.displayName}
+            defaultValue={user.displayName}
             name="name"
             onChange={handleOnChange}
             required
@@ -85,6 +89,7 @@ function BuyerProfile() {
             type="text"
             placeholder="Enter your Contact No."
             name="phone"
+            defaultValue={currentUser.phone}
             onChange={handleOnChange}
             required
           />
@@ -97,6 +102,7 @@ function BuyerProfile() {
             cols="60"
             rows="10"
             required
+            defaultValue={currentUser.address}
             onChange={handleOnChange}
             placeholder="Enter Shipping Address"
           ></textarea>

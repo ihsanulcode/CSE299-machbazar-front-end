@@ -10,11 +10,9 @@ function Banner() {
   return (
     <div className="banner-container">
       <div className="banner py-4rem">
-        <div
-          id="carouselExampleControls"
-          className="carousel slide"
-          data-bs-ride="carousel"
-        >
+        <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
+
+          {/* Banner images */}
           <div className="carousel-inner darkened-img">
             <div className="carousel-item active">
               <img
@@ -52,16 +50,16 @@ function Banner() {
               />
             </div>
           </div>
-          <div className="banner-text text-light d-flex flex-column align-items-center">
-            <p className="lg-py-2 text-center">
-              Explore Various types of Fishes from Home
-            </p>
-            <h1 className="lg-py-2 text-center">
-              Fresh Fish in Reasonable Price
-            </h1>
 
-            <button className="btn btn-light">Shop Now</button>
+          {/* banner texts */}
+          <div className="banner-text text-light d-flex flex-column align-items-center">
+            <p className="lg-py-2 text-center">Various types of Fishes from Home</p>
+            <h1 className="lg-py-2 text-center">Fresh Fish in Reasonable Price</h1>
+            <h3>Explore Machbazar</h3>
           </div>
+
+
+          {/* banner left button */}
           <button
             className="carousel-control-prev"
             type="button"
@@ -74,6 +72,8 @@ function Banner() {
             ></span>
             <span className="visually-hidden">Previous</span>
           </button>
+
+          {/* banner right button */}
           <button
             className="carousel-control-next"
             type="button"
@@ -86,6 +86,7 @@ function Banner() {
             ></span>
             <span className="visually-hidden">Next</span>
           </button>
+
         </div>
       </div>
     </div>

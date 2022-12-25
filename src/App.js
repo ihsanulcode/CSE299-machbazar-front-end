@@ -49,7 +49,7 @@ function App() {
           ),
         },
         {
-          path: `/categories/:id`,
+          path: `/categories/:name`,
           element: <SearchResult></SearchResult>,
           loader: ({ params }) =>
             fetch(`http://localhost:5000/products/category/${params.name}`),

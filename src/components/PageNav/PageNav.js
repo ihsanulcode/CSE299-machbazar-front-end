@@ -11,6 +11,7 @@ function PageNav() {
   const cartCount = 0;
   const heartCount = 0;
   const { user } = useContext(AuthContext);
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-light">
@@ -36,19 +37,31 @@ function PageNav() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/">
-                  Home
+                <Link
+                  className="nav-link active"
+                  aria-current="page"
+                  to={`/categories/crab`}
+                >
+                  Crab
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link " aria-current="page">
-                  Shop
+                <Link
+                  className="nav-link "
+                  aria-current="page"
+                  to={`/categories/prawn`}
+                >
+                  Prawn
                 </Link>
               </li>
 
               <li className="nav-item d-lg-none d-md-block d-block">
-                <Link className="nav-link " aria-current="page">
-                  Cart
+                <Link
+                  className="nav-link "
+                  aria-current="page"
+                  to={`/categories/deshi`}
+                >
+                  Deshi
                 </Link>
               </li>
               <li className="nav-item d-lg-none d-md-block d-block">
@@ -62,13 +75,21 @@ function PageNav() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link " aria-current="page">
-                  About
+                <Link
+                  className="nav-link "
+                  aria-current="page"
+                  to={`/categories/deshi`}
+                >
+                  Deshi
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" aria-current="page">
-                  Contract
+                <Link
+                  className="nav-link"
+                  aria-current="page"
+                  to={`/categories/pond`}
+                >
+                  Pond
                 </Link>
               </li>
               <li className="nav-item d-lg-none d-block">

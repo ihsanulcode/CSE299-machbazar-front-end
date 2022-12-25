@@ -33,7 +33,7 @@ function SellerHome() {
   useEffect(() => {
     fetch(`http://localhost:5000/products/${user.uid}`)
       .then((res) => res.json())
-      .then((data) => setYourProducts(data.slice(0, 3)));
+      .then((data) => setYourProducts(data));
   }, []);
   return (
     <div>

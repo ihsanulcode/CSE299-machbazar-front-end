@@ -19,12 +19,14 @@ function SellerRegistration() {
   const [user, setUser] = useState({
     uid: "",
     userState: "seller",
+    address: "",
     name: "",
     phone: "",
     email: "",
   });
 
-  const { createUser, googleLogin, updateUserName, setSeller } = useContext(AuthContext);
+  const { createUser, googleLogin, updateUserName, setSeller } =
+    useContext(AuthContext);
   const googleProvider = new GoogleAuthProvider();
   const navigate = useNavigate();
 
@@ -78,12 +80,6 @@ function SellerRegistration() {
 
   const handleOnChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
-    // const field = e.target.name;
-    // const value = e.target.value;
-    // const newUser = { ...user };
-    // newUser[field] = value;
-    // setUser(newUser);
-    // console.log(user);
   };
 
   const createUserInDb = (uid) => {

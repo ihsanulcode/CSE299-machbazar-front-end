@@ -5,12 +5,15 @@
   top: 30%;
   z-index: 20;
 }
+
 .banner .banner-text h1 {
   font-size: 3.5vw;
 }
+
 .banner .banner-text p {
   font-size: 1.5vw;
 }
+
 .darkened-img img {
   filter: brightness(60%);
 }

@@ -12,12 +12,14 @@ function HeaderBody() {
         <div className="d-none d-lg-block mt-2">
           <Categories></Categories>
         </div>
+
         <div className="mt-2">
           <Container>
             <PageNav className="d-sm-none d-lg-block"></PageNav>
             <Banner></Banner>
           </Container>
         </div>
+        
       </Container>
     </div>
   );
