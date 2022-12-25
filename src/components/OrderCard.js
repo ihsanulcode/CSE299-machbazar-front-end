@@ -29,6 +29,7 @@ function OrderCard({ order, handleDelete }) {
         className="border border-secondary mx-auto d-flex  my-3"
       >
         <img src={order.fishImage} style={{ width: "100px" }} />
+
         <div className="d-flex justify-content-between w-100">
           <div className="ms-2">
             <p className="m-0 text-start">Order Id: {order._id.substr(order._id.length - 4)}</p>
@@ -40,25 +41,27 @@ function OrderCard({ order, handleDelete }) {
               Price: <p className="d-inline text-primary ">{order.price}</p>
             </p>
           </div>
-          <button
-            className="btn btn-danger me-0"
+
+          {/* delete button  */}
+          {order.orderStatus === "completed" ? <></> : <button
+            className="btn btn-danger m-0"
             style={{ marginRight: "0" }}
             onClick={() => handleDelete(order)}
           >
-            delete
-          </button>
+            Delete
+          </button>}
+
+          {/* delivered button  */}
+          {seller && order.orderStatus === "pending" && (
+            <button
+              className="btn btn-success m-0"
+              style={{ marginRight: "0" }}
+              onClick={handleUpdate}
+            >
+              Delivered
+            </button>
+          )}
         </div>
-      </div>
-      <div className="m-0">
-        {seller && order.orderStatus === "pending" && (
-          <button
-            className="btn btn-light border-success me-0"
-            style={{ marginRight: "0" }}
-            onClick={handleUpdate}
-          >
-            order completed
-          </button>
-        )}
       </div>
     </div>
   );

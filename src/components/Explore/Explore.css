@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0;
-  margin: 50px 100px;
 }
 
 .explore-section-image img {

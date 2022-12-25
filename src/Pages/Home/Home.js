@@ -15,7 +15,6 @@ function Home() {
   const [fishData, setFishData] = useState([]);
   const [seaFish, setSeaFish] = useState([]);
   const [dryFish, setDryFish] = useState([]);
-  const [crabs, setCrabs] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:5000/products")
@@ -36,11 +35,6 @@ function Home() {
           return fish.category === 'dry fish';
         });
         setDryFish(filtered2);
-
-        const filtered3 = data.filter(fish => {
-          return fish.category === 'crab';
-        });
-        setCrabs(filtered3);
       });
   }, []);
 
@@ -75,7 +69,7 @@ function Home() {
       <NewArrival title={"সামুদ্রিক মাছ"} fishData={seaFish}></NewArrival>
 
       {/* ----------------------- Explore More section -------------------------- */}
-      <Explore></Explore>
+      <Container className="my-5"><Explore></Explore></Container>
     </div>
   );
 }

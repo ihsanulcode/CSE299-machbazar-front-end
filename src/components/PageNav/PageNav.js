@@ -1,17 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaShoppingCart, FaHeart } from "react-icons/fa";
 import "../MainNav/MainNav.css";
 import Categories from "../Header/HeaderBody/Categories/Categories";
 import "./PageNav.css";
-import { useContext } from "react";
-import { AuthContext } from "../../contexts/AuthProvider";
 
 function PageNav() {
-  const cartCount = 0;
-  const heartCount = 0;
-  const { user } = useContext(AuthContext);
-
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-light">
@@ -38,7 +31,7 @@ function PageNav() {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <Link
-                  className="nav-link active"
+                  className="nav-link"
                   aria-current="page"
                   to={`/categories/crab`}
                 >
@@ -59,9 +52,36 @@ function PageNav() {
                 <Link
                   className="nav-link "
                   aria-current="page"
-                  to={`/categories/deshi`}
+                  to={`/categories/sea`}
                 >
-                  Deshi
+                  Sea
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className="nav-link "
+                  aria-current="page"
+                  to={`/categories/sea`}
+                >
+                  Sea
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className="nav-link"
+                  aria-current="page"
+                  to={`/categories/pond`}
+                >
+                  Pond
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className="nav-link"
+                  aria-current="page"
+                  to={`/categories/river`}
+                >
+                  River
                 </Link>
               </li>
               <li className="nav-item d-lg-none d-md-block d-block">
@@ -74,46 +94,10 @@ function PageNav() {
                   Register
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link
-                  className="nav-link "
-                  aria-current="page"
-                  to={`/categories/deshi`}
-                >
-                  Deshi
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  className="nav-link"
-                  aria-current="page"
-                  to={`/categories/pond`}
-                >
-                  Pond
-                </Link>
-              </li>
               <li className="nav-item d-lg-none d-block">
                 <Categories></Categories>
               </li>
             </ul>
-            <div className="d-flex d-lg-block d-none">
-              <button className="cart-icon-btn mr-2">
-                <Link to={`/cart`}>
-                  <FaShoppingCart className="cart-icon"></FaShoppingCart>
-                </Link>
-                <span className="text-muted">
-                  <small>{cartCount}</small>
-                </span>
-              </button>
-              <button className="heart-icon-btn ml-2">
-                <Link to={"/wishlist"}>
-                  <FaHeart className="heart-icon" />
-                </Link>
-                <span className="text-muted">
-                  <small>{heartCount}</small>
-                </span>
-              </button>
-            </div>
           </div>
         </div>
       </nav>
