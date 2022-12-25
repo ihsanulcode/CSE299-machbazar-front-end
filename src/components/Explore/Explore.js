@@ -18,7 +18,7 @@ function Explore() {
             and deliver your frozen fish. So they arrive at your home in perfect
             condition.
           </p>
-          <button className="w-100 btn btn-light border">Explore More</button>
+          <h5>Explore Your Machbazar</h5>
         </div>
       </div>
     </div>

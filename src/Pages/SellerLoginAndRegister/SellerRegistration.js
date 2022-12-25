@@ -11,6 +11,7 @@ function SellerRegistration() {
   const [values, setValues] = useState({
     name: "",
     email: "",
+    phone: "",
     password: "",
     confirmPassword: "",
   });
@@ -45,7 +46,8 @@ function SellerRegistration() {
       name: "phone",
       type: "text",
       placeholder: "Enter Your Phone number",
-      errorMessage: " ",
+      errorMessage: "Please enter a phone number",
+      required: true,
     },
     {
       id: 3,

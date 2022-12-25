@@ -1,11 +1,13 @@
 .cards-container {
   margin-top: 100px;
 }
+
 /* view all button design */
 .viewAll-btn {
   border: none;
   background-color: white;
 }
+
 .viewAll-btn:hover {
   background-color: aliceblue;
 }

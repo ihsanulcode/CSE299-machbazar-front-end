@@ -7,7 +7,6 @@ import "./NewArrival.css";
 
 function NewArrival({ title, fishData }) {
   const [fishes, setFishes] = useState(fishData);
-  console.log(fishData);
 
   const handleViewAll = () => {
     setFishes(fishData);
@@ -18,13 +17,14 @@ function NewArrival({ title, fishData }) {
       setFishes(fishData.slice(0, 6));
     }
   }, []);
+
   return (
     <div>
       <Container className="cards-container">
         <div className="d-flex justify-content-between">
           <h3>{title}</h3>
           <button
-            className="btn text-primary btn-light"
+            className="btn text-primary btn-light viewAll-btn"
             onClick={handleViewAll}
           >
             view all

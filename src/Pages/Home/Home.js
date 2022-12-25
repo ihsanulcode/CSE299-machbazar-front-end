@@ -7,9 +7,9 @@ import cashon from "../../assets/cod.png";
 import online from "../../assets/online-payment.png";
 import { Container } from "react-bootstrap";
 import NewArrival from "../../components/NewArrivalFishes/NewArrival";
-import OurSellers from "../../components/OurSellers/OurSellers";
-import "./Home.css";
 import Explore from "../../components/Explore/Explore";
+import "./Home.css";
+
 
 function Home() {
   const [fishData, setFishData] = useState([]);
@@ -24,6 +24,7 @@ function Home() {
     <div>
       {/* ---------- header section------------------------- */}
       <HeaderBody></HeaderBody>
+
       {/* -----------------mini cards section--------------------- */}
       <Container className="my-4 text-center">
         <div className="miniCard-container row cols-1 cols-md-2 cols-lg-3 g-2 g-lg-3 justify-items-center">
@@ -41,16 +42,14 @@ function Home() {
           </div>
         </div>
       </Container>
+
       {/* -------------------Fishes section----------------- */}
       <NewArrival title={"মাছের সমাহার"} fishData={fishData}></NewArrival>
 
       {/* -------------------------Category wise-------------- */}
-      <NewArrival title={"ইলিশ সমগ্র"} fishData={fishData}></NewArrival>
-      <NewArrival title={"শুটকি সমগ্র"} fishData={fishData}></NewArrival>
-      <NewArrival title={"রূপচাঁদা সমগ্র"} fishData={fishData}></NewArrival>
-
-      {/* ------------------------Our sellers section------------------ */}
-      <OurSellers></OurSellers>
+      <NewArrival title={"সামুদ্রিক মাছ"} fishData={fishData}></NewArrival>
+      <NewArrival title={"শুটকি মাছ সমগ্র"} fishData={fishData}></NewArrival>
+      <NewArrival title={"নদীর মাছ"} fishData={fishData}></NewArrival>
 
       {/* ----------------------- Explore More section -------------------------- */}
       <Explore></Explore>

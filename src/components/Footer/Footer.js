@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  FaMapPin,
-  FaMailBulk,
-  FaFacebookSquare,
-  FaGoogle,
-  FaYoutubeSquare,
-} from "react-icons/fa";
+import { FaMapPin, FaMailBulk, FaFacebookSquare, FaGoogle, FaYoutubeSquare } from "react-icons/fa";
 import "./Footer.css";
 
 function Footer() {
@@ -20,12 +14,11 @@ function Footer() {
               <FaMapPin className="icon m-2" />
             </div>
             <div>
-              <p>
-                MachBazar{"("}Zulonto Zone{")"} Plot No 5,
-              </p>
+              <p>MachBazar, Shortoli</p>
               <p>Road No-13, Block-C,</p>
-              <p>Dhaka Bir Housing</p>
-              <p>Gulshan, Dhaka.</p>
+              <p>Machbazar, Cox's Bazar</p>
+              <p>1500 Chittagong Hilltrack</p>
+              <p>Chittagong, Bangladesh</p>
             </div>
           </div>
           <div className="d-flex align-items-center p-4">
@@ -37,6 +30,7 @@ function Footer() {
             </div>
           </div>
         </div>
+
         {/* ------------------------------our services section----------------------------------- */}
         <div className="m-2">
           <h4>Our Services</h4>
@@ -57,6 +51,7 @@ function Footer() {
             </div>
           </div>
         </div>
+
         {/* --------------------------------Information section---------------------------------- */}
         <div className="m-2">
           <h4>Our Services</h4>
@@ -76,6 +71,7 @@ function Footer() {
             <div></div>
           </div>
         </div>
+
         {/* --------------------------------Follow Us section------------------------------------- */}
         <div className="m-2" id="follow">
           <h4>Follow Us</h4>
@@ -93,11 +89,12 @@ function Footer() {
           </div>
         </div>
       </div>
+
       {/* ---------------------------------------ending of footer------------------------------- */}
       <div>
         <hr className="border border-2 bg-white" />
         <p className="p-4 ms-4 ">
-          <span>&copy;</span> 2022 Company,Inc.Privacy . Terms
+          2022 Company . Inc . Privacy . Terms
         </p>
       </div>
     </div>

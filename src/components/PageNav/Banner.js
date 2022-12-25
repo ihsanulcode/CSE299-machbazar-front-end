@@ -4,7 +4,6 @@ import carousel_2 from "../../assets/carousel_2.jpg";
 import carousel_3 from "../../assets/carousel_3.jpg";
 import carousel_4 from "../../assets/carousel_4.jpg";
 import carousel_5 from "../../assets/carousel_5.jpg";
-import carousel_6 from "../../assets/carousel_6.jpg";
 import "./Banner.css";
 
 function Banner() {
@@ -48,13 +47,6 @@ function Banner() {
             <div className="carousel-item">
               <img
                 src={carousel_5}
-                className="d-block w-100 img-fluid"
-                alt="..."
-              />
-            </div>
-            <div className="carousel-item">
-              <img
-                src={carousel_6}
                 className="d-block w-100 img-fluid"
                 alt="..."
               />
