@@ -56,25 +56,27 @@ function Orders() {
       orders.filter((order) => order.orderStatus === "completed")
     );
   }, [orders, setOrders]);
-  
+
   return (
     <Row>
       <Col>
         <SideNav></SideNav>
       </Col>
-      <Col lg={8} md={12} className="text-center">
+      <Col lg={8} md={12} className="text-center me-5">
         {/* ---------------------- completed orders list------------------- */}
         <div>
-          <h4 className="my-4">
-            Delivered:
-            <p className="text-primary d-inline ms-2">
-              {completedOrders.length ? completedOrders.length : 0} items
-            </p>
-          </h4>
-          <h4>
-            status: <p className="text-success d-inline">Completed</p>
-          </h4>
-          <hr />
+          <div className="d-flex justify-content-center mt-5 mb-3">
+            <h4>
+              Delivered:
+              <p className="text-primary d-inline ms-2">
+                {completedOrders.length ? completedOrders.length : 0} items
+              </p>
+            </h4>
+            <h4>
+              &nbsp;&nbsp;&nbsp; Status: <p className="text-success d-inline">Delivered</p>
+            </h4>
+          </div>
+          <hr className="border border-secondary mt-0" />
           <div>
             {completedOrders.map((order) => (
               <OrderCard
@@ -87,16 +89,18 @@ function Orders() {
         </div>
         {/* ------------------------pending orders list---------------------- */}
         <div>
-          <h4 className="my-4">
-            Pending:
-            <p className="text-primary d-inline ms-2">
-              {pendingOrders.length ? pendingOrders.length : 0} items
-            </p>
-          </h4>
-          <h4>
-            status: <p className="text-danger d-inline">Pending</p>
-          </h4>
-          <hr />
+          <div className="d-flex justify-content-center mt-5">
+            <h4>
+              Pending:
+              <p className="text-primary d-inline ms-2">
+                {pendingOrders.length ? pendingOrders.length : 0} items
+              </p>
+            </h4>
+            <h4>
+              &nbsp;&nbsp;&nbsp; Status: <p className="text-danger d-inline">Pending</p>
+            </h4>
+          </div>
+          <hr className="border border-secondary mt-0" />
           <div>
             {pendingOrders.map((order) => (
               <OrderCard

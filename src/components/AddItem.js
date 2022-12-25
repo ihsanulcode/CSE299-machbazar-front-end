@@ -58,12 +58,12 @@ function AddItem({ user }) {
 
   return (
     <form className="add-item" onSubmit={handleSubmit(onSubmit)}>
-      <Container className="my-2">
-        <h3>Add New Item</h3>
+      <Container className="my-4">
+        <h3>Add New Product</h3>
         <hr />
         {/* <!-- fish category --> */}
         <label for="category">
-          <b>Choose Category: </b>
+          <b>Choose Category:  </b>
         </label>
         <select id="category" {...register("category", { required: true })}>
           <option value="crab">Crab</option>
@@ -90,7 +90,7 @@ function AddItem({ user }) {
         <br />
         {/* <!-- fish weight --> */}
         <label for="weight">
-          <b>Weight</b>
+          <b>Weight (gm)</b>
         </label>
         <input
           type="text"
@@ -100,7 +100,7 @@ function AddItem({ user }) {
         <br />
         {/* <!-- fish unit price --> */}
         <label for="price">
-          <b>Price</b>
+          <b>Price (BDT)</b>
         </label>
         <input
           type="text"
