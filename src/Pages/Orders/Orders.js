@@ -68,14 +68,15 @@ function Orders() {
         <div>
           <div className="d-flex justify-content-center mt-5 mb-3">
             <h4>
-              Delivered:
+              Status: <p className="text-success d-inline">Delivered &nbsp;&nbsp;&nbsp;</p>
+            </h4>
+            <h4>
+              Total:
               <p className="text-primary d-inline ms-2">
                 {completedOrders.length ? completedOrders.length : 0} items
               </p>
             </h4>
-            <h4>
-              &nbsp;&nbsp;&nbsp; Status: <p className="text-success d-inline">Delivered</p>
-            </h4>
+
           </div>
           <hr className="border border-secondary mt-0" />
           <div>
@@ -91,15 +92,15 @@ function Orders() {
 
         {/* ------------------------pending orders list---------------------- */}
         <div>
-          <div className="d-flex justify-content-center mt-5">
+          <div className="d-flex justify-content-center mt-5 mb-3">
             <h4>
-              Pending:
+              Status: <p className="text-warning d-inline">Pending &nbsp;&nbsp;&nbsp;</p>
+            </h4>
+            <h4>
+              Total:
               <p className="text-primary d-inline ms-2">
                 {pendingOrders.length ? pendingOrders.length : 0} items
               </p>
-            </h4>
-            <h4>
-              &nbsp;&nbsp;&nbsp; Status: <p className="text-warning d-inline">Pending</p>
             </h4>
           </div>
           <hr className="border border-secondary mt-0" />

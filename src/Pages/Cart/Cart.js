@@ -11,7 +11,6 @@ function Cart() {
   const cart = useLoaderData();
   const [cartItems, setCartItems] = useState(cart);
   const [total, setTotal] = useState(0);
-  // console.log("cartItems", cartItems);
 
   const handleDelete = (item, itemTotal) => {
     setTotal(total - itemTotal);

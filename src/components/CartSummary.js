@@ -7,6 +7,7 @@ function CartSummary({ cartItems, setCartItems, total, setTotal }) {
   const [show, setShow] = useState(false);
   const [order, setOrder] = useState({ orderStatus: "pending" });
   const { user } = useContext(AuthContext);
+
   const handleCheckout = () => {
     setShow(true);
   };
@@ -57,7 +58,7 @@ function CartSummary({ cartItems, setCartItems, total, setTotal }) {
     });
     setTotal(totalPrice);
   }, []);
-  
+
   return (
     <>
       <>

@@ -1,12 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import Dropdown from "react-bootstrap/Dropdown";
-import DropdownButton from "react-bootstrap/DropdownButton";
 import { FaCheckCircle } from "react-icons/fa";
 import cod from "../../assets/cod.png";
 import charge from "../../assets/charge.png";
 import delivery from "../../assets/delivery.png";
-import chat from "../../assets/chat.png";
 import "./ProductExtendedView.css";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
@@ -33,6 +30,7 @@ function ProductExtendedView() {
     newItem.price = price;
     newItem.weight = weight;
     newItem.sellerId = fish.sellerId;
+
     setCartItem({ ...newItem, user: user.uid });
   }, []);
 
