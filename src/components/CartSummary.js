@@ -57,6 +57,7 @@ function CartSummary({ cartItems, setCartItems, total, setTotal }) {
     });
     setTotal(totalPrice);
   }, []);
+  
   return (
     <>
       <>

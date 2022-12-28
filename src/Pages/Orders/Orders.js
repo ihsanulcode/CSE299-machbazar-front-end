@@ -63,6 +63,7 @@ function Orders() {
         <SideNav></SideNav>
       </Col>
       <Col lg={8} md={12} className="text-center me-5">
+
         {/* ---------------------- completed orders list------------------- */}
         <div>
           <div className="d-flex justify-content-center mt-5 mb-3">
@@ -87,6 +88,7 @@ function Orders() {
             ))}
           </div>
         </div>
+
         {/* ------------------------pending orders list---------------------- */}
         <div>
           <div className="d-flex justify-content-center mt-5">
@@ -97,7 +99,7 @@ function Orders() {
               </p>
             </h4>
             <h4>
-              &nbsp;&nbsp;&nbsp; Status: <p className="text-danger d-inline">Pending</p>
+              &nbsp;&nbsp;&nbsp; Status: <p className="text-warning d-inline">Pending</p>
             </h4>
           </div>
           <hr className="border border-secondary mt-0" />

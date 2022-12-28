@@ -32,8 +32,8 @@ function OrderCard({ order, handleDelete }) {
 
         <div className="d-flex justify-content-between w-100">
           <div className="ms-2">
-            <p className="m-0 text-start">Order Id: {order._id.substr(order._id.length - 4)}</p>
-            <p className="m-0 text-start">Product Name: {order.name}</p>
+            <p className="m-0 text-start">Order Id: <p className="d-inline text-primary">{order._id.substr(order._id.length - 6)}</p></p>
+            <p className="m-0 text-start">Product Name: <p className="d-inline text-primary">{order.name}</p></p>
             <p className="m-0 text-start">
               Weight: <p className="d-inline text-primary">{order.weight}</p>
             </p>
