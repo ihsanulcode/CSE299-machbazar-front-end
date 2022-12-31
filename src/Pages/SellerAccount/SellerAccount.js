@@ -41,7 +41,11 @@ function SellerAccount() {
   useEffect(() => {
     fetch(`http://localhost:5000/user/${user.uid}`)
       .then((res) => res.json())
-      .then((data) => setCurrentUser(data));
+      .then((data) => {
+        setCurrentUser(data);
+        values.phone = currentUser.phone;
+        values.address = currentUser.address;
+      });
   }, []);
   return (
     <Row>

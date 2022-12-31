@@ -55,7 +55,7 @@ function Banner() {
           <div className="banner-text text-light d-flex flex-column align-items-center">
             <p className="lg-py-2 text-center">Various types of Fishes from Home</p>
             <h1 className="lg-py-2 text-center">Fresh Fish in Reasonable Price</h1>
-            <h3>Explore Machbazar</h3>
+            <h3 className="lg-py-2 text-center">Explore Machbazar</h3>
           </div>
 
 

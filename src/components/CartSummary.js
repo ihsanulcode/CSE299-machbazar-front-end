@@ -74,7 +74,7 @@ function CartSummary({ cartItems, setCartItems, total, setTotal }) {
           </Modal.Footer>
         </Modal>
       </>
-      <div className="card border-secondary mb-5">
+      <div className="card border-secondary mb-5 w-50 mx-auto">
         <div className="card-header bg-light border-0">
           <h4 className="font-weight-semi-bold m-0">Cart Summary</h4>
         </div>

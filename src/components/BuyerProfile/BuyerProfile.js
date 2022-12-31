@@ -17,7 +17,6 @@ function BuyerProfile() {
 
   const handleOnChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
-    console.log(values);
   };
 
   const handleSubmit = (event) => {
@@ -46,7 +45,7 @@ function BuyerProfile() {
       .then((data) => {
         setCurrentUser(data);
         values.phone = currentUser.phone;
-        console.log(data);
+        values.address = currentUser.address;
       });
   }, []);
 

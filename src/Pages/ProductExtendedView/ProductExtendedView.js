@@ -160,7 +160,10 @@ function ProductExtendedView() {
               </Container>
               <hr className="mt-4" />
               <div className="text-center">
-                <small>Shop Address: <br />{seller.address}</small>
+                <small>
+                  Shop Address: <br />
+                  {seller.address}
+                </small>
               </div>
             </div>
           </Col>

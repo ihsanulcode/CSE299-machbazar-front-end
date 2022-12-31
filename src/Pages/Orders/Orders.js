@@ -28,14 +28,40 @@ function Orders() {
             const remainingItems = orders.filter((it) => it._id != item._id);
             setOrders(remainingItems);
             setPendingOrders(
-              orders.filter((order) => order.orderStatus === "pending")
+              remainingItems.filter((order) => order.orderStatus === "pending")
             );
             setCompletedOrders(
-              orders.filter((order) => order.orderStatus === "completed")
+              remainingItems.filter(
+                (order) => order.orderStatus === "completed"
+              )
             );
           }
         });
     }
+  };
+
+  const handleUpdate = (order) => {
+    order.orderStatus = "completed";
+    fetch(`http://localhost:5000/updateOrder/${order._id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(order),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          const remainingItems = orders.filter((it) => it._id != order._id);
+          setOrders(remainingItems);
+          setPendingOrders(
+            remainingItems.filter((ord) => ord.orderStatus === "pending")
+          );
+          setCompletedOrders(
+            remainingItems.filter((ord) => ord.orderStatus === "completed")
+          );
+        }
+      });
   };
 
   useEffect(() => {
@@ -63,28 +89,29 @@ function Orders() {
         <SideNav></SideNav>
       </Col>
       <Col lg={8} md={12} className="text-center me-5">
-
         {/* ---------------------- completed orders list------------------- */}
         <div>
-          <div className="d-flex justify-content-center mt-5 mb-3">
-            <h4>
-              Status: <p className="text-success d-inline">Delivered &nbsp;&nbsp;&nbsp;</p>
-            </h4>
-            <h4>
-              Total:
+          <h4 className="my-4">
+            <p className="d-inline">
+              Status: <p className="d-inline text-success">Delivered </p>
+            </p>
+            <p className="d-inline ms-5">
+              Items:{" "}
               <p className="text-primary d-inline ms-2">
-                {completedOrders.length ? completedOrders.length : 0} items
+                {completedOrders.length ? completedOrders.length : 0}
               </p>
-            </h4>
+            </p>
+          </h4>
 
-          </div>
-          <hr className="border border-secondary mt-0" />
+          <hr className="border border-secondary" />
+
           <div>
             {completedOrders.map((order) => (
               <OrderCard
                 key={order._id}
                 order={order}
                 handleDelete={handleDelete}
+                handleUpdate={handleUpdate}
               ></OrderCard>
             ))}
           </div>
@@ -92,24 +119,27 @@ function Orders() {
 
         {/* ------------------------pending orders list---------------------- */}
         <div>
-          <div className="d-flex justify-content-center mt-5 mb-3">
-            <h4>
-              Status: <p className="text-warning d-inline">Pending &nbsp;&nbsp;&nbsp;</p>
-            </h4>
-            <h4>
-              Total:
+          <h4 className="my-4">
+            <p className="d-inline">
+              Status: <p className="d-inline text-danger">Pending </p>
+            </p>
+            <p className="d-inline ms-5">
+              Items:{" "}
               <p className="text-primary d-inline ms-2">
-                {pendingOrders.length ? pendingOrders.length : 0} items
+                {pendingOrders.length ? pendingOrders.length : 0}
               </p>
-            </h4>
-          </div>
-          <hr className="border border-secondary mt-0" />
+            </p>
+          </h4>
+
+          <hr className="border border-secondary" />
+
           <div>
             {pendingOrders.map((order) => (
               <OrderCard
                 key={order._id}
                 order={order}
                 handleDelete={handleDelete}
+                handleUpdate={handleUpdate}
               ></OrderCard>
             ))}
           </div>

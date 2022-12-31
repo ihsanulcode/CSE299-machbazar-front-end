@@ -35,11 +35,11 @@ function Cart() {
 
   return (
     <div>
-      <div>
-        <SideNav></SideNav>
-      </div>
-      <div className="container-fluid pt-5">
+      <div className="container-fluid pt-5 ">
         <div className="row px-xl-5">
+          <div className="col-lg-4">
+            <SideNav></SideNav>
+          </div>
           <div className="col-lg-8 table-responsive mb-5">
             <table className="table table-bordered text-center mb-0">
               <thead className="bg-light text-dark">
@@ -64,15 +64,15 @@ function Cart() {
               </tbody>
             </table>
           </div>
-          <div className="col-lg-4">
-            {/* <!-- cart summary section --> */}
-            <CartSummary
-              cartItems={cartItems}
-              total={total}
-              setTotal={setTotal}
-              setCartItems={setCartItems}
-            ></CartSummary>
-          </div>
+        </div>
+        <div className="row mx-auto">
+          {/* <!-- cart summary section --> */}
+          <CartSummary
+            cartItems={cartItems}
+            total={total}
+            setTotal={setTotal}
+            setCartItems={setCartItems}
+          ></CartSummary>
         </div>
       </div>
     </div>

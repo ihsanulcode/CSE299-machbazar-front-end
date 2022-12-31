@@ -103,6 +103,27 @@ function SellerRegistration() {
       });
   };
 
+  const createUserInDbForGmail = (u) => {
+    user.uid = u.uid;
+    user.name = u.displayName;
+    user.phone = values.phone;
+    user.email = u.email;
+
+    fetch("http://localhost:5000/register", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          alert("user added successfully");
+        }
+      });
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -133,7 +154,7 @@ function SellerRegistration() {
     googleLogin(googleProvider)
       .then((res) => {
         const user = res.user;
-        createUserInDb(user.uid);
+        createUserInDbForGmail(user);
         console.log(user);
         navigate("/sellerHome");
       })

@@ -6,6 +6,7 @@ import "../Login/Login.css";
 import { GoogleAuthProvider } from "firebase/auth";
 import FormInput from "../../components/FormInput";
 import { useEffect } from "react";
+import AllModal from "../../components/AllModal";
 
 function SellerLogin() {
   const [values, setValues] = useState({
@@ -13,7 +14,9 @@ function SellerLogin() {
     password: "",
   });
   const [error, setError] = useState("");
-  const { signIn, googleLogin, setSeller } = useContext(AuthContext);
+  const [modalText, setModalText] = useState("");
+  const [modalShow, setModalShow] = useState(false);
+  const { signIn, googleLogin, setSeller, resetPass } = useContext(AuthContext);
   const googleProvider = new GoogleAuthProvider();
   const navigate = useNavigate();
   const location = useLocation();
@@ -60,7 +63,7 @@ function SellerLogin() {
       })
       .catch((e) => {
         console.error(e);
-        setError("Wrong Email/Password. Please Try again");
+        setError("Wrong Email or Password. Please Try again!");
       });
   };
 
@@ -73,8 +76,30 @@ function SellerLogin() {
       .catch((e) => console.log(e));
   };
 
+  const handleForgotPass = () => {
+    if (values.email === "") {
+      setModalText("please enter your email");
+      setModalShow(true);
+      return;
+    } else {
+      resetPass(values.email)
+        .then(() => {
+          setModalText(
+            "Password reset mail has been sent, please check your email."
+          );
+          setModalShow(true);
+        })
+        .catch((e) => console.log(e.message));
+    }
+  };
+
   return (
     <div className="form login my-4">
+      <AllModal
+        modalText={modalText}
+        modalShow={modalShow}
+        setModalShow={setModalShow}
+      ></AllModal>
       <span className="title">Seller</span>
       <span className="title">Welcome Back!</span>
       <div className="log">
@@ -91,11 +116,22 @@ function SellerLogin() {
             />
           ))}
         </div>
-        <p>
-          <small className="text-danger">{error}</small>
-        </p>
+        <a className="fs-6 m-0">
+          {error ? (
+            <p className="text-danger">
+              {error}{" "}
+              <button className="forgotbtn text-primary d-block" onClick={handleForgotPass}>
+                forgot password?
+              </button>
+            </p>
+          ) : (
+            <button className=" forgotbtn text-primary " onClick={handleForgotPass}>
+              forgot password?
+            </button>
+          )}
+        </a>
 
-        <div className="input-field ">
+        <div className="input-field">
           <button type="submit" className="button w-100 p-2 mt-0">
             log in
           </button>
@@ -105,7 +141,7 @@ function SellerLogin() {
       <div className="login-signup">
         <p className="text">
           Don't have an account?
-          <Link to={"/register"} className="text signup-link">
+          <Link to={"/register"} className="text signup-link ms-1">
             Signup Now!
           </Link>
           <h5>or login with</h5>
@@ -120,9 +156,7 @@ function SellerLogin() {
       </div>
       <div className="text-center">
         <p>
-          <Link to={"/login"}>
-            or Login as Customer
-          </Link>
+          <Link to={"/login"}>or Login as Customer</Link>
         </p>
       </div>
     </div>
