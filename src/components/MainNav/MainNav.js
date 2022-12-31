@@ -18,7 +18,6 @@ function MainNav() {
   const handleLogout = () => {
     logOut()
       .then(() => {
-        setSeller(false);
         navigate("/");
       })
       .catch((e) => console.log(e));

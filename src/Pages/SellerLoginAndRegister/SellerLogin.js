@@ -5,7 +5,6 @@ import google from "../../assets/google.png";
 import "../Login/Login.css";
 import { GoogleAuthProvider } from "firebase/auth";
 import FormInput from "../../components/FormInput";
-import { useEffect } from "react";
 import AllModal from "../../components/AllModal";
 
 function SellerLogin() {
@@ -21,10 +20,6 @@ function SellerLogin() {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathName || "/sellerHome";
-
-  useEffect(() => {
-    setSeller(true);
-  }, []);
 
   const inputs = [
     {
@@ -120,12 +115,18 @@ function SellerLogin() {
           {error ? (
             <p className="text-danger">
               {error}{" "}
-              <button className="forgotbtn text-primary d-block" onClick={handleForgotPass}>
+              <button
+                className="forgotbtn text-primary d-block"
+                onClick={handleForgotPass}
+              >
                 forgot password?
               </button>
             </p>
           ) : (
-            <button className=" forgotbtn text-primary " onClick={handleForgotPass}>
+            <button
+              className=" forgotbtn text-primary "
+              onClick={handleForgotPass}
+            >
               forgot password?
             </button>
           )}

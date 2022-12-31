@@ -36,7 +36,7 @@ function SellerHome() {
       .then((data) => setYourProducts(data));
   }, []);
   return (
-    <div>
+    <div style={{ minHeight: "520px" }}>
       <SellerProducts
         fishData={yourProducts}
         title="Your Products"

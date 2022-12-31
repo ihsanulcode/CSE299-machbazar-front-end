@@ -46,6 +46,8 @@ function BuyerProfile() {
         setCurrentUser(data);
         values.phone = currentUser.phone;
         values.address = currentUser.address;
+        values.name = currentUser.name;
+        values.email = currentUser.email;
       });
   }, []);
 
@@ -63,10 +65,8 @@ function BuyerProfile() {
           <input
             type="text"
             placeholder="Enter your Name"
-            defaultValue={user.displayName}
+            value={currentUser.name}
             name="name"
-            onChange={handleOnChange}
-            required
           />
           <br />
           <label for="email">
@@ -77,8 +77,6 @@ function BuyerProfile() {
             placeholder="Enter your E-mail"
             value={user.email}
             name="email"
-            onChange={handleOnChange}
-            required
           />
           <br />
           <label for="number">

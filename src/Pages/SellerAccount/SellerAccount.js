@@ -45,6 +45,8 @@ function SellerAccount() {
         setCurrentUser(data);
         values.phone = currentUser.phone;
         values.address = currentUser.address;
+        values.name = currentUser.name;
+        values.email = currentUser.email;
       });
   }, []);
   return (
@@ -65,8 +67,6 @@ function SellerAccount() {
               placeholder="Enter your Name"
               value={user.displayName}
               name="name"
-              onChange={handleOnChange}
-              required
             />
             <br />
             <label for="email">
@@ -77,8 +77,6 @@ function SellerAccount() {
               placeholder="Enter your E-mail"
               value={user.email}
               name="email"
-              onChange={handleOnChange}
-              required
             />
             <br />
             <label for="number">
