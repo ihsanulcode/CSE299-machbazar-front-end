@@ -7,7 +7,10 @@ function SellerProducts({ fishData, title, handleDelete }) {
   return (
     <Container className="cards-container">
       <div className="d-flex justify-content-start">
-        <h3>{title}</h3>
+        <h3>{title}: </h3>
+        <h3 className="ms-2">
+          {fishData.length}
+        </h3>
       </div>
       <hr className="border border-secondary mt-0" />
       <div className="fish-cards">
