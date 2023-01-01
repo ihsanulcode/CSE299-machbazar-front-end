@@ -61,7 +61,9 @@ function App() {
             fetch(`http://localhost:5000/cart/${params.uid}`),
         },
         {
-          path: "/account",
+          path: "/account/:uid",
+          loader: ({ params }) =>
+            fetch(`http://localhost:5000/user/${params.uid}`),
           element: <MyAccount></MyAccount>,
         },
         {
@@ -85,7 +87,9 @@ function App() {
           element: <AddProduct></AddProduct>,
         },
         {
-          path: "/sellerAccount",
+          path: "/sellerAccount/:uid",
+          loader: ({ params }) =>
+            fetch(`http://localhost:5000/user/${params.uid}`),
           element: <SellerAccount></SellerAccount>,
         },
         {

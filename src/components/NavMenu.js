@@ -29,7 +29,7 @@ function JohnDoe({ user, handleLogout }) {
           <li>
             <Link
               className="dropdown-item text-decoration-none"
-              to={`/sellerAccount`}
+              to={`/sellerAccount/${user.uid}`}
             >
               My Account
             </Link>
@@ -61,7 +61,7 @@ function JohnDoe({ user, handleLogout }) {
           <li>
             <Link
               className="dropdown-item text-decoration-none"
-              to={`/account`}
+              to={`/account/${user.uid}`}
             >
               My Account
             </Link>

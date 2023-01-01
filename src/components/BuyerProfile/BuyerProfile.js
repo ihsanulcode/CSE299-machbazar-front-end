@@ -5,14 +5,13 @@ import { Container } from "react-bootstrap";
 import { AuthContext } from "../../contexts/AuthProvider";
 import "./BuyerProfile.module.css";
 
-function BuyerProfile() {
+function BuyerProfile({ currentUser }) {
   const { user } = useContext(AuthContext);
-  const [currentUser, setCurrentUser] = useState({});
   const [values, setValues] = useState({
     name: user.displayName,
     email: user.email,
     phone: currentUser.phone,
-    address: "",
+    address: currentUser.address,
   });
 
   const handleOnChange = (e) => {
@@ -38,18 +37,6 @@ function BuyerProfile() {
         }
       });
   };
-
-  useEffect(() => {
-    fetch(`http://localhost:5000/user/${user.uid}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setCurrentUser(data);
-        values.phone = currentUser.phone;
-        values.address = currentUser.address;
-        values.name = currentUser.name;
-        values.email = currentUser.email;
-      });
-  }, []);
 
   return (
     <div className="container-body">

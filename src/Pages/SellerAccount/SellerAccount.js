@@ -3,16 +3,18 @@ import { Col, Container, Row } from "react-bootstrap";
 import SideNav from "../../components/SideNav";
 import "../../components/BuyerProfile/BuyerProfile.module.css";
 import { AuthContext } from "../../contexts/AuthProvider";
+import { useLoaderData } from "react-router-dom";
 
 function SellerAccount() {
   const { user } = useContext(AuthContext);
-  const [currentUser, setCurrentUser] = useState({});
+  const currentUser = useLoaderData();
   const [values, setValues] = useState({
     name: user.displayName,
     email: user.email,
     phone: currentUser.phone,
-    address: "",
+    address: currentUser.address,
   });
+  console.log(values);
 
   const handleOnChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
@@ -38,17 +40,7 @@ function SellerAccount() {
         }
       });
   };
-  useEffect(() => {
-    fetch(`http://localhost:5000/user/${user.uid}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setCurrentUser(data);
-        values.phone = currentUser.phone;
-        values.address = currentUser.address;
-        values.name = currentUser.name;
-        values.email = currentUser.email;
-      });
-  }, []);
+
   return (
     <Row>
       <Col>

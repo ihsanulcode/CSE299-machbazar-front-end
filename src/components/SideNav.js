@@ -20,7 +20,7 @@ function SideNav() {
           {/* ---------------------------------Navigation for SEller------------------- */}
           <NavLink
             className="nav-button pt-3"
-            to="/sellerAccount"
+            to={`/sellerAccount/${user.uid}`}
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             My Account
@@ -46,7 +46,7 @@ function SideNav() {
           {/* ---------------------------------navigation for BUYER----------------------- */}{" "}
           <NavLink
             className="nav-button pt-3"
-            to="/account"
+            to={`/account/${user.uid}`}
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             My Account
